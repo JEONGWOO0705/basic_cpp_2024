@@ -13,7 +13,19 @@ IoT 시스템개발자 심화 프로그래밍 언어 학습리포지토리
 		- if, else 문(C언어종류) / elif = Python
 		- 반복문 For
 		- 반복문 While
-		- Overloading(재정의), Overriding
+		- Overloading(재정의) : 함수가 같은 이름을 가지고 있어도, 다른 매개변수 설정을 통하여 다른 함수로 구분 가능!!
+
+```c++
+int MyFunc(int num){
+	num++;
+	return num;
+}
+int MyFunc(int a, int b){
+	return a+b;
+}
+```
+
+		- Overriding
 		
 	2. 반복제어문 
 		- for,while
