@@ -15,15 +15,15 @@ IoT 시스템개발자 심화 프로그래밍 언어 학습리포지토리
 		- 반복문 While
 		- Overloading(재정의) : 함수가 같은 이름을 가지고 있어도, 다른 매개변수 설정을 통하여 다른 함수로 구분 가능!!
 
-```c++
-int MyFunc(int num){
-	num++;
-	return num;
-}
-int MyFunc(int a, int b){
-	return a+b;
-}
-```
+		```c++
+		int MyFunc(int num){
+			num++;
+			return num;
+		}
+		int MyFunc(int a, int b){
+			return a+b;
+		}
+		```
 
 		- Overriding
 		
