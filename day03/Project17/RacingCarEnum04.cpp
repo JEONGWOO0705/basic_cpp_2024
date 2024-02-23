@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 
+// new/delete은 힙영역과 관련
+
 namespace CAR_CONST {	// CAR_CONST 이름 공간안에 구조체 Car에 사용하는 상수들을 모두 모아놓았따.
-	enum {
+	enum {	// 열거형
 		ID_LEN = 20,
 		MAX_SPD = 200,
 		FUEL_STEP = 2,
@@ -50,9 +52,9 @@ struct Car {
 };
 
 int main(void) {
-	Car run99 = { "run99", 100, 0 };
-	run99.Accel();
-	run99.Accel();
+	Car run99 = { "run99", 100, 0 };	//	구조체가 stack영역에 생김
+	run99.Accel();	//98,10
+	run99.Accel();	//96, 20
 	run99.ShowCarstate();
 	run99.Break();
 	run99.ShowCarstate();
