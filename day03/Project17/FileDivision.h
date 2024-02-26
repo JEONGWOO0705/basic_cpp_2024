@@ -25,7 +25,7 @@ private:
 	int age;
 
 public:
-	Human(const char* mname, const char* mjob, int mage);
+	Human(const char* mname, const char* mjob, int mage);	// 헤더 파일에서 굳이 {} 안함 ..? 매개변수만 설정하고 바로 ;로 끝내버리기!!
 
 	void ShowProfile();
 
