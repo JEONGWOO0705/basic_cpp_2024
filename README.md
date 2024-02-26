@@ -102,6 +102,81 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 - 객체 지향 프로그래밍의 이해
 	- 현실에 존재하는 사물과 대상, 그리고 그에 따른 행동을 있는 그대로 실체화 하는 프로그램
 	- 객체는 하나 이상의 상태 정보(데이터)와 하나 이상의 행동(기능)으로 구성
+- 정보 은닉
+- 캡슐화(Encapsulation)
+- 생성자(Constructor)
+	```c++
+	#include <iostream>
+	using namespace std;
+
+	class MyClass {
+
+		int num;
+
+	public:
+		MyClass() {	//default 생성자	// 매개변수를 입력하지 않았을때 생겨나는 생성자!!
+		// 디폴트 생성자를 사용할 경우 생성자를 부를때 2와 3의 매개 변수 호출 따로 없이 1의 생성자(디폴트 생성자)만 호출할 경우 오류가 발생!!!
+			cout << "생성자 호출: MyClass()" << endl;
+			num = 10;
+		}
+		MyClass(int anum) {	//2
+			num = anum;
+			cout <<"num : " << num << endl;
+		}
+		void MyClassInfo() {
+			cout << "num: " << num << endl;
+		}
+	};
+
+	int main() {
+
+		//MyClass *m = new MyClass();
+		MyClass m1;	// 객체 생성 명령으로 자동 호출 된다
+		m1.MyClassInfo();
+		MyClass m2(20);
+		return 0;
+	}```
+
+- strcpy를 통해 문자열 복사 복습
+	```c++
+	#include <iostream>
+	using namespace std;
+
+	class StudentClass {
+		const int ID;	// 학번을 상수화 --> 상수화를 했을경우 객체 생성전에 초기화 시켜야함!!
+		char name[20];	// 문자열을 넣을 공간을 생성!!
+		char major[20];
+		int age;
+
+	public:
+	// 문자열은 주소이기 때문에 포인트 변수에 넣어서 사용한다.
+	// 문자열의 첫번째 문자 주소가 저장된다.
+		StudentClass(int myid, const char *mname, const char *mmajor, int myage) : ID(myid){
+			//C++ 인수 목록이 일치하는 생성자의 인스턴스가 없습니다.
+            //인수 형식이 (int, const char [9], const char [3], int)입니다.
+			//const char *mname 에서 const를 설정 안하면 위와 같은 오류가 발생한다.
+			// 원본이 변경되면 안되기 때문에 const 꼭사용!
+			ID = myid;
+			strcpy_s(name, mname);	//strcpy가 없다면 정해놓은 20개의 공간을 나눠 쓰는게 아니라 한 공간에 문자열이 들어가면서 오류가 발생한다.
+			strcpy_s(major, mmajor);
+			age = myage;
+		}
+		// 문자열 배열을 선언하고 strcpy() 를 통해 
+		void Showdata() const {
+
+			cout << ID <<' '<< name <<' '<< major <<' '<< age << endl;
+
+		}
+	};
+
+	int main(void) {
+		StudentClass me(2052708, "jeongwoo", "IT", 27);		// 객체를 생성하면 생성자 호출해야 한다.
+		// jeongwoo라는 문자열이 시작하는 주소가 mname에 저장되어 있음
+		me.Showdata();
+
+		return 0;
+
+	}```
 
 
 ## 5일차
