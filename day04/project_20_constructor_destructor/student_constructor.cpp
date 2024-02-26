@@ -19,6 +19,8 @@ public:
 		// 원본이 변경되면 안되기 때문에 const 꼭사용!
 		strcpy_s(name, mname);	//strcpy가 없다면 정해놓은 20개의 공간을 나눠 쓰는게 아니라 한 공간에 문자열이 들어가면서 오류가 발생한다.
 		strcpy_s(major, mmajor);
+
+		// strcpy_s(name, "황정우");  --> name이라는 배열 20칸 안에 황정우(3칸) 라는 문자열이 들어감!!
 		age = myage;
 	}
 	// 문자열 배열을 선언하고 strcpy() 를 통해 
