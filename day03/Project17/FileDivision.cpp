@@ -12,6 +12,10 @@ void AClass :: Alnfo() {
 	std::cout << "AClass :: num " << num << std::endl;
 }
 
+human::human(name, age, job)
+{
+}
+
 void human :: showHuman() {	// ¸â¹ö ÇÔ¼ö
 	printf("name : %s	age : %d	job : %s\n", name, age, job);
 }
