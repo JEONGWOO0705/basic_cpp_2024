@@ -151,17 +151,20 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 	public:
 	// 문자열은 주소이기 때문에 포인트 변수에 넣어서 사용한다.
 	// 문자열의 첫번째 문자 주소가 저장된다.
+	// 멤버 이니셜라이즈는 객체 생성시 초기화 되지않는 (상수화 설정이 되어있는) 멤버들을 초기화 할때 사용한다!!
+	// 즉 객체 생성과 상관 없이 미리 초기화가 되는 멤버들의 초기화
 		StudentClass(int myid, const char *mname, const char *mmajor, int myage) : ID(myid){
 			//C++ 인수 목록이 일치하는 생성자의 인스턴스가 없습니다.
             //인수 형식이 (int, const char [9], const char [3], int)입니다.
 			//const char *mname 에서 const를 설정 안하면 위와 같은 오류가 발생한다.
 			// 원본이 변경되면 안되기 때문에 const 꼭사용!
 			ID = myid;
-			strcpy_s(name, mname);	//strcpy가 없다면 정해놓은 20개의 공간을 나눠 쓰는게 아니라 한 공간에 문자열이 들어가면서 오류가 발생한다.
+			strcpy_s(name, mname);	//strcpy가 없다면 정해놓은 20개의 공간을 나눠 쓰는게 아니라 
+									//한 공간에 문자열이 들어가면서 오류가 발생한다.
 			strcpy_s(major, mmajor);
 			age = myage;
 		}
-		// 문자열 배열을 선언하고 strcpy() 를 통해 
+		// 문자열 배열을 선언하고 strcpy() 를 통해야함! 
 		void Showdata() const {
 
 			cout << ID <<' '<< name <<' '<< major <<' '<< age << endl;
@@ -170,7 +173,7 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 	};
 
 	int main(void) {
-		StudentClass me(2052708, "jeongwoo", "IT", 27);		// 객체를 생성하면 생성자 호출해야 한다.
+		StudentClass me(2052708, "jeongwoo", "IT", 27);	// 객체를 생성하면 생성자 호출해야 한다.
 		// jeongwoo라는 문자열이 시작하는 주소가 mname에 저장되어 있음
 		me.Showdata();
 
