@@ -27,6 +27,18 @@
     <ClCompile Include="struct_class3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="RacingCarClassBase.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RacingCarEnum04.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RacingCarOuterFunc05.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RacingMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileDivision.h">

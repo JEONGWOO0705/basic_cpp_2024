@@ -1,5 +1,6 @@
 #include <iostream>
 #include "FileDivision.h"
+using namespace std;
 
 AClass :: AClass(int anum) {
 	
@@ -12,16 +13,19 @@ void AClass :: Alnfo() {
 	std::cout << "AClass :: num " << num << std::endl;
 }
 
-void human :: showHuman() {	// 멤버 함수
-	printf("name : %s	age : %d	job : %s\n", name, age, job);
+Human::Human(const char* mname, const char* mjob, int mage) {
+	strcpy_s(name, mname);
+	strcpy_s(job, mjob);
+	age = mage;
 }
-int main() {
 
-	AClass a(10);
-	a.Alnfo();
+void Human::ShowProfile() {
+	cout << name << ' ' << job << ' ' << age << endl;
+}
 
-	human h("황정우", 27, "백수");
-	h.showHuman();
-
+int main(void) {
+	Human me("정우", "학생", 27);
+	me.ShowProfile();
 	return 0;
+
 }
