@@ -238,6 +238,22 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 	- 초기화 꼭 하기!! (이니셜라이즈와 this로 초기화 하기!!)
 
 - 참조자 (reference  [&] ) 복습
+
+	```c++
+	int main() {
+	int a = 3;
+	int& another_a = a;
+
+
+	another_a = 5;
+
+	cout << "a : " << a << endl;
+	cout << "another_a : " << another_a << endl;
+
+	return 0;
+	}
+	```
+
 	- another_a는 a의 참조자다 !!
 	- 즉 another_a 는 a의 또다른 이름이다!!
 	- another_a에 어떠한 작업을 하든 사실상 a에 작업하는 것이다!!
