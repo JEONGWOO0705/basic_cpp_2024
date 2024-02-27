@@ -117,6 +117,8 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 - 정보 은닉
 - 캡슐화(Encapsulation)
 - 생성자(Constructor)
+- 멤버 이니셜라이저(Member Initializer)
+	- const변수와 참조자 선언과 동시에 초기화가 이루어져야함!!
 	```c++
 	#include <iostream>
 	using namespace std;
@@ -195,6 +197,24 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 
 
 ## 5일차
+- 생성자 추가 학습
+- 소멸자(destructor)
+	- 힙영역에 메모리 공간을 할당 받았을 경우 반드시 소멸자를 통해 할당된 메모리 공간 반환하기!!
+- 포인터(pointer)
+	- 배열 포인터
+	```c++
+	Human h[3] = { Human("홍길동", 50), Human("황정우", 27), Human("이수지", 27) };	// 객체 배열
+
+	for (int i = 0; i < 3; i++) {
+		h[i].HumanInfo();
+	}
+
+	Human* h1 = new Human("가나다", 50);	// h1 이라는 포인트 객체에 new를 통해 정보가 담긴 주소를 저장한다
+	h1->HumanInfo();						// ("가나다", 50) 정보가 담긴 포인트 객체 h1에서  ->를 통해 멤버함수 HumanInfo()에 접근한다.
+
+	delete h1;
+	
+	```
 
 ## 6일차
 
