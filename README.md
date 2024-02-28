@@ -259,7 +259,20 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 	- another_a에 어떠한 작업을 하든 사실상 a에 작업하는 것이다!!
 	
 ## 6일차
+- 얉은 복사 생성자
+	- 복사 생성자 정의 없이 ex) Person man1 = man2; 로 객체를 복사하면
+	- 얇은복사 --> 소멸자가 한번밖에 생성이 안됨
+    - man2 의 소멸자가 실행되기전에 man1이 소멸자가 실행되면서, man 1의 문자열이 삭제 되고
+    - 문자열을 가르키고 있던 man2는 소멸할게 없어졌기 때문!!
 
+- 깊은 복사 생성자
+	- 복사할 문자열에게 새로운 메모리 공간을 주면서 복사를 한다!
+	```c++
+	Person(const Person& copy) : age(copy.age) {
+    name = new char[strlen(copy.name) + 1];
+    strcpy(name, copy.name);
+	}
+	```
 ## 7일차
 
 ## 8일차
