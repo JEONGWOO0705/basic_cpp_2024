@@ -302,20 +302,21 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 				// 부모클래스의 변수를 쓰기 위해서 변수 선언을 protected로 선언한다
 }
 			```
-	- 자식 클래스에서 부모 클래스의 멤버까지 초기화 해야할 의무가 있다!
+
+		- 자식 클래스에서 부모 클래스의 멤버까지 초기화 해야할 의무가 있다!
 		- 부모클래스를 호출해서 클래스의 멤버를 초기화 하는것이 Best!
 
 		```c++
 		class UnivStudent : public Person {// 클래스의 상속을 의미함	
 
 		private:
-			string major;
+				string major;
 
 		public:
 			UnivStudent(const char* myname, int myage, const char* mymajor) :Person(myage, myname) {
 				cout << "자식 생성자 실행" << endl;
 				major = mymajor;
-			}
+				}
 
 			void WhoAreYou() const {
 				WhatYourName();
@@ -324,7 +325,10 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 				cout << "My major is " << major << endl << endl;
 			}
 		};
+
 		```
+
+
 	- 유도 클래스
 		- 유도 클래스의 객체 생성과정에서 기초 클래스의 생성자는 100% 생성된다
 		- 유도 클래스의 생성자에서 기초 클래스의 생성자 호출을 명시하지 않으면, 기초 클래스의 void생성자가 호출된다.
@@ -332,15 +336,35 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 	- A --> B--> C 순서로 상속받고 있다면 C에서도 A의 멤버함수를 사용할수 있다!!
 
 	- ** 함수에서 문자열을 반환 값으로 받고 싶을때 **
-	
-		```c++
-		string ShowName() {
-			return name;
-		}
-		```
+		
+	```c++
+	string ShowName() {
+		return name;
+	}
+	```
+
 
 ## 8일차
 
 ## 9일차 
 
 ## 10일차
+
+class UnivStudent : public Person {// 클래스의 상속을 의미함	
+
+private:
+		string major;
+
+public:
+	UnivStudent(const char* myname, int myage, const char* mymajor) :Person(myage, myname) {
+		cout << "자식 생성자 실행" << endl;
+		major = mymajor;
+		}
+
+	void WhoAreYou() const {
+		WhatYourName();
+		HowOldAreYou();
+
+		cout << "My major is " << major << endl << endl;
+	}
+};
