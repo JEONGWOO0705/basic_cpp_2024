@@ -286,7 +286,58 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 		- 선언된 파일 내에서만 참조 허용
 	- 함수내에 선언된 static
 		- 한번만 초기화되고, 지역변수와 달리 함수를 빠져나가도 소멸되지 않는다.
+	- static 멤버함수 내에서는 static 멤버 변수와 static멤버함수만 호출이 가능하다.
+	- const static 멤버 변수는 클래스가 정의될 때 지정된 값이 유지되는 상수
 ## 7일차
+- static 추가 학습
+- 상속(Inheritance)
+	- 자식 클래스에서 부모 클래스의 멤버 함수를 사용할 수 있게 함!!
+		- 부모클래스의 멤버 변수에 접근을 할려면 protected로 변수를 선언해야한다
+			```c++
+			void state() {
+				cout << "총알의 수 : " << bullet /* getbullet()  함수로 만들어서 하는 방법도 있음!!*/ << endl;		
+				
+				cout << "수갑의 수 : " << handcuffs << endl;
+				// Gun(부모클래스)에서 변수를 private으로 선언하면 변수를 자식 클래스에서 쓸수없음
+				// 부모클래스의 변수를 쓰기 위해서 변수 선언을 protected로 선언한다
+}
+			```
+	- 자식 클래스에서 부모 클래스의 멤버까지 초기화 해야할 의무가 있다!
+		- 부모클래스를 호출해서 클래스의 멤버를 초기화 하는것이 Best!
+
+		```c++
+		class UnivStudent : public Person {// 클래스의 상속을 의미함	
+
+		private:
+			string major;
+
+		public:
+			UnivStudent(const char* myname, int myage, const char* mymajor) :Person(myage, myname) {
+				cout << "자식 생성자 실행" << endl;
+				major = mymajor;
+			}
+
+			void WhoAreYou() const {
+				WhatYourName();
+				HowOldAreYou();
+
+				cout << "My major is " << major << endl << endl;
+			}
+		};
+		```
+	- 유도 클래스
+		- 유도 클래스의 객체 생성과정에서 기초 클래스의 생성자는 100% 생성된다
+		- 유도 클래스의 생성자에서 기초 클래스의 생성자 호출을 명시하지 않으면, 기초 클래스의 void생성자가 호출된다.
+
+	- A --> B--> C 순서로 상속받고 있다면 C에서도 A의 멤버함수를 사용할수 있다!!
+
+	- ** 함수에서 문자열을 반환 값으로 받고 싶을때 **
+	
+		```c++
+		string ShowName() {
+			return name;
+		}
+		```
 
 ## 8일차
 
