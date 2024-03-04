@@ -37,7 +37,7 @@ int main(void) {
 
 
 	ptr->Sleep();
-	ptr1->Sleep();
+	ptr1->Sleep(); // ptr1 자체는 Person 클래스를 가리키므로 부모 클래스인 Person 클래스의 멤버 함수만 사용할 수 있다.
 	ptr2->Sleep();
 	ptr3->Study();
 

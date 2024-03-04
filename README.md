@@ -349,9 +349,49 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 	- 부모타입의 객체 포인터로 자식 객체를 가리킬 수 있다.
 	- 하지만 자식 타입의 객체 포인터로 부모 객체를 가리킬 수 없다.	
 
+	```c++
+	
+	#include <iostream>
+
+	class Person{};
+
+	class Student : public Person{};
+	class Partimestudent : public Student{};
+
+	int main()
+	{
+		return 0;
+	}
+
+	Person* ptr;        //Person 타입의 객체 포인터 선언
+						// 부모타입의 객체 포인터는 자식 타입의 객체도 선언 가능 but 반대는 불가!!
+	Person *ptr = new Person(); // o
+
+	// Person p = new Person(); // x
+
+	Person* ptr = new Student();
+	Person* ptr2 = new Partimestudent();
+	/*
+	C++컴파일러는 포인터 연산의 가능성 여부를 판단할대, 포인터의 자료형 기준으로 판단
+	실제 가리키는 객체의 자료형을 기준으로 판단하지 않는다
+
+	--> 부모 클래스의 포인터 자료형으로 선언했으면 부모 클래스가 기준!
+	*/
+	```
+
 - 다형성
 	- 오버로딩(Overloading) : 다중정의
 	- 오버라이딩(Overrideing) : 재정의, 상속관계에서 사용
+
+- 가상 함수
+- 가상 소멸자
+- 추상클래스
+	- 객체를 생성하지 않는 클래스
+	- 순수 가상 함수를 가지고 있는 클래스
+	- 현재 당장은 필요가 없지만 미래에 필요할 수 있는 클래스다!!
+	- ex)  virtual int Getpay() const = 0; --> 실행부가 없음!!
+
+
 
 ## 9일차 
 
