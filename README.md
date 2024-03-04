@@ -300,7 +300,7 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 				cout << "수갑의 수 : " << handcuffs << endl;
 				// Gun(부모클래스)에서 변수를 private으로 선언하면 변수를 자식 클래스에서 쓸수없음
 				// 부모클래스의 변수를 쓰기 위해서 변수 선언을 protected로 선언한다
-}
+				}
 			```
 
 		- 자식 클래스에서 부모 클래스의 멤버까지 초기화 해야할 의무가 있다!
@@ -337,34 +337,23 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 
 	- ** 함수에서 문자열을 반환 값으로 받고 싶을때 **
 		
-	```c++
-	string ShowName() {
-		return name;
-	}
-	```
+		```c++
+		string ShowName() {
+			return name;
+		}
+		```
 
 
 ## 8일차
+- 객체 포인터의 참조 관계
+	- 부모타입의 객체 포인터로 자식 객체를 가리킬 수 있다.
+	- 하지만 자식 타입의 객체 포인터로 부모 객체를 가리킬 수 없다.	
+
+- 다형성
+	- 오버로딩(Overloading) : 다중정의
+	- 오버라이딩(Overrideing) : 재정의, 상속관계에서 사용
 
 ## 9일차 
 
 ## 10일차
 
-class UnivStudent : public Person {// 클래스의 상속을 의미함	
-
-private:
-		string major;
-
-public:
-	UnivStudent(const char* myname, int myage, const char* mymajor) :Person(myage, myname) {
-		cout << "자식 생성자 실행" << endl;
-		major = mymajor;
-		}
-
-	void WhoAreYou() const {
-		WhatYourName();
-		HowOldAreYou();
-
-		cout << "My major is " << major << endl << endl;
-	}
-};
