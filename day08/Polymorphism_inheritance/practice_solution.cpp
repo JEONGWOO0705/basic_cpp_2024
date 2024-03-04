@@ -29,7 +29,7 @@ int main(void) {
 	RemoteControl* remote = new SamsungTv();
 	remote->On();
 
-	remote = new LGtv();
+	remote = new LGtv();	// remote라는 포인터 변수에 lgtv객체 넣기!!
 	remote->On();
 
 	delete remote;
