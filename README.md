@@ -401,4 +401,38 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 	- 연산자 내에서 동적 할당을 한다면, 그리고 깊은 복사가 필요하다면 직접 정의해야한다.
 
 ## 10일차
+- 대입 연산자 추가 학습 및 연산자 오버로딩
+- 배열의 인덱스 연산자 오버로딩
+- 스마트 포인터
+
+	```c++
+	#include <iostream>
+	using namespace std;
+
+	class MyClass {
+	private:
+		int* ptr;
+
+	public:
+		MyClass(int p):ptr(new int[100]) {
+			printf("생성자 호출 \n");
+		}
+
+		~MyClass() {
+			cout << "소멸자 호출 \n" << endl;
+			delete[]ptr;
+		}
+
+	};
+
+	int main() {
+
+		MyClass* m1 = new MyClass(10);
+
+		cout << "===================================================" << endl;
+		unique_ptr<MyClass>m2(new MyClass(20));	// smart pointer
+
+		return 0;
+	}
+	```
 
