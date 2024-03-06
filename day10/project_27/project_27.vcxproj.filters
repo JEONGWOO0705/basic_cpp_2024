@@ -15,46 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FirstOperationOverloading.cpp">
+    <ClCompile Include="InheritAssignOperation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GFunctionOverloading.cpp">
+    <ClCompile Include="improvelnit.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="OneOpndOverloading.cpp">
+    <ClCompile Include="array.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="add.cpp">
+    <ClCompile Include="arraypractice.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="PostOpndOverloading.cpp">
+    <ClCompile Include="ArrayClass.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="PointMultipleOperation.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CommuMultipleOperation.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ConsoleOutput.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="LterateConsoleOutput.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="practice.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="FirstOperationOverloading2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AssignShallowCopyError.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="practice2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AssignShallowCopyError02.cpp">
+    <ClCompile Include="NewDeleteOverloading.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
