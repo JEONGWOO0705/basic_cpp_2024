@@ -49,6 +49,7 @@ int main() {
 	char mname[100];
 	int mkr, mmath, menglish;
 
+
 	for (int i = 0; i < 5; i++) {
 
 		cout << "이름을 입력하세요 : " << endl;

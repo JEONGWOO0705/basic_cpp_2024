@@ -436,3 +436,31 @@ class human {	//	 human 구조체	(내가 만든 사용자 정의 자료형)
 	}
 	```
 
+## 11일차
+- 객체 배열, 객체 포인터 배열 복습
+	- 객체 배열을 생성할때 생성자를 따로 추가해야 한다!!
+
+	```c++
+	public:
+	Grade(const char* name, int ko, int eng, int math) {
+		this->ko = ko;
+		this->eng = eng;
+		this->math = math;
+
+		this->name = new char[strlen(name) + 1];
+		strcpy(this->name, name);
+	}
+
+	Grade() {	// 배열 생성시 필요한 생성자!!
+		cout << "생성자 호출" << endl;
+		name = NULL;
+		ko = 0;
+		eng = 0;
+		math = 0;
+	}
+	~Grade() {
+		printf("소멸자 호출\n");
+
+		delete[]name;
+	}
+	```
