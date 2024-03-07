@@ -60,5 +60,11 @@
     <ClCompile Include="practiceSolution2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="practicesolution3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="practiceSolution4.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
